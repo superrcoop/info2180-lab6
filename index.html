@@ -10,15 +10,16 @@
         function search(){
             var url= "request.php?q=definition";
             var xhttp= new XMLHttpRequest();
-            var text;
+            var txtt;
             xhttp.onreadystatechange = function(){
                 if(this.readyState === XMLHttpRequest.DONE){
                     if( this.status=== 200){
-                            text=this.responseText;
+                        txtt=this.responseText;
+                        console.log(txtt);
                     }
                 }
             };
-            alert(text);            
+            alert(txtt);            
         }
     </script>
 </head>
