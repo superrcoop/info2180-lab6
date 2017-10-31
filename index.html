@@ -14,11 +14,15 @@
                 if(this.readyState === XMLHttpRequest.DONE){
                     if( this.status=== 200){
                         document.getElementById('search').innerHTML= this.responseText;
+                        console.log(responseText);
                     }
                 }
             };
+            alert(responseText);
             xhttp.open("GET",url,true);
             xhttp.send();
+
+            
         }
     </script>
 </head>
