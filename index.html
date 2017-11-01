@@ -7,23 +7,6 @@
     <meta name="keywords" content="AJAX,PHP,Lab6">
     <meta name="author" content="Jordan Cooper"> 
     <link rel='stylesheet' type='text/css' href='style.css'>
-    <script>
-        function search(){
-            var xhttp= new XMLHttpRequest();
-            var search=document.getElementById("search").value;
-            xhttp.onreadystatechange = function(){
-                if(this.readyState == 4 && this.status== 200){
-                    if(search){
-                       document.getElementById("result").innerHTML=this.responseText;
-                    }else{
-                       alert("Error: You must enter a word");
-                    }
-                }
-            }
-            xhttp.open("GET","request.php?q="+search,true);
-            xhttp.send();
-        }
-    </script>
 </head>
 <body>
     <div id="dictionary">
@@ -33,8 +16,10 @@
         <p>Lookup the definition of a word (e.g. ajax, html, bar, php, javascript or css)<br><br>
         <input id="search" >
         <button type="button" onclick="search()">Search</button>
+        <button type="button" onclick="searchall()">View all words</button>
         </p>
         <div id="result"></div>
     </div>
+<script type="text/javascript" src="custom.js"></script>
 </body>
 </html>
