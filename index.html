@@ -9,22 +9,27 @@
     <script>
     
         function search(){
-            var url= "request.php?q=definition";
             var xhttp= new XMLHttpRequest();
-            var textt="";
+            var search=document.getElementById("search").value;
             xhttp.onreadystatechange = function(){
                 if(this.readyState == 4 && this.status== 200){
-                    alert(this.responseText);
+                    if(search){
+                       document.getElementById("result").innerHTML=this.responseText;
+                    }else{
+                       alert("Error: You must enter a word");
+                    }
                 }
-            };
-            xhttp.open("GET",url,true);
+            }
+            xhttp.open("GET","request.php?q="+search,true);
             xhttp.send();
         }
     </script>
 </head>
 <body>
-    <div id="search">
+    <div>
+        <input id="search" >
         <button type="button" onclick="search()">Search</button>
     </div>
+    <div id="result"></div>
 </body>
 </html>
