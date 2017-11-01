@@ -7,19 +7,18 @@
     <meta name="keywords" content="AJAX,PHP,Lab6">
     <meta name="author" content="Jordan Cooper"> 
     <script>
+    
         function search(){
             var url= "request.php?q=definition";
             var xhttp= new XMLHttpRequest();
-            var txtt;
+            var textt="";
             xhttp.onreadystatechange = function(){
-                if(this.readyState === XMLHttpRequest.DONE){
-                    if( this.status=== 200){
-                        txtt=this.responseText;
-                        console.log(txtt);
-                    }
+                if(this.readyState == 4 && this.status== 200){
+                    alert(this.responseText);
                 }
             };
-            alert(txtt);            
+            xhttp.open("GET",url,true);
+            xhttp.send();
         }
     </script>
 </head>
