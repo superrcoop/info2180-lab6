@@ -6,8 +6,8 @@
     <meta name="description" content="uwi-info2180-lab6">
     <meta name="keywords" content="AJAX,PHP,Lab6">
     <meta name="author" content="Jordan Cooper"> 
+    <link rel='stylesheet' type='text/css' href='style.css'>
     <script>
-    
         function search(){
             var xhttp= new XMLHttpRequest();
             var search=document.getElementById("search").value;
@@ -26,10 +26,15 @@
     </script>
 </head>
 <body>
-    <div>
+    <div id="dictionary">
+        <div class="banner">
+            <h1>WEB DICTIONARY</h1> 
+        </div>
+        <p>Lookup the definition of a word (e.g. ajax, html, bar, php, javascript or css)<br><br>
         <input id="search" >
         <button type="button" onclick="search()">Search</button>
+        </p>
+        <div id="result"></div>
     </div>
-    <div id="result"></div>
 </body>
 </html>
